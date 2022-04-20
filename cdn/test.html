@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        #root p {
+            color: white;
+            font-size: 20px;
+            background-color: green;
+            text-align: center;
+            width: 200px;
+        }
+
+        #btn_plus {
+            background-color: red;
+            border: 2px solid #000;
+            font-size: 15px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <button id="btn_plus">+더하기</button>
+
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script>
+        console.log(React);
+        console.log(ReactDOM);
+
+        // 컴포넌트 생성(객체)
+        const Component = (props) => {
+            // createElement는 태그 dom을 만드는 역할
+            return React.createElement(
+                'p', // 태그명
+                null, // props
+                `${props.message} : ${props.count}` // 태그 내부 텍스트
+            );
+
+            // message: 'init',
+            // count: 0,
+            // render() {
+            //     return `<p>${this.message} : ${this.count}</p>`;
+            // }
+        };
+
+        // 렌더링 함수(render는 화면에 그려주는 역할)
+        ReactDOM.render(
+            React.createElement(Component, {message: 'init', count: 0}, null),
+            document.querySelector('#root')
+        );
+
+        // rootElement 는 <div id="root"></div> 가져오는 것
+        // function render(rootElement, component) {
+        //     rootElement.innerHTML = component.render();
+        // }
+
+        // render(document.querySelector('#root'), component);
+
+        // 클릭했을 때 숫자 늘리는 함수
+        document.querySelector('#btn_plus').addEventListener("click", () => {
+            ReactDOM.render(
+                React.createElement(Component, {message: 'update', count: 10}, null),
+                document.querySelector('#root')
+            );
+            
+            // component.message = "update";
+            // component.count = component.count + 1;
+
+            // render(document.querySelector('#root'), component);
+        });
+
+
+        // 기존에 쓰던 함수 방식
+        // const root = document.querySelector('#root');
+        // const btn_plus = document.querySelector('#btn_plus');
+
+        // let i = 0;
+
+        // // innerHTML 안에 넣어주는 것
+        // root.innerHTML = '<p>init : 1 </p>';
+
+        // btn_plus.addEventListener('click', () => {
+        //     root.innerHTML = `<p>init : ${i++}</p>`;
+        // });
+    </script>
+</body>
+</html>
