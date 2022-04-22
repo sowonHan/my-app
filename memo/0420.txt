@@ -33,3 +33,6 @@ babel은 react 문법으로 작성한 코드를 기존 javascript 코드 형식�
 
 서버 켜서 리액트 app.js 화면 구동할 때는 터미널에 npm start
 서버 끌 때는 ctrl + c
+
+react snippet으로 컴포넌트 양식 쉽게 불러올 수 있는데
+rcc는 클래스형 컴포넌트, rsf는 함수형 컴포넌트 불러오는 단축키
