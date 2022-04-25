@@ -1,3 +1,4 @@
+import React from 'react';
 // 4월 20일
 // import { Fragment } from 'react';
 
@@ -46,33 +47,63 @@
 // function App() {
 //     return <IterationSample />;
 // }
-import LifeCycleSample from './component/04.22/LifeCycleSample';
-import { Component } from 'react';
 
-function getRandomColor() {
-    return '#' + Math.floor(Math.random() * 16777215).toString(16);
-}
+// 4월 25일
+// import LifeCycleSample from './component/04.22/LifeCycleSample';
+// import ErrorBoundary from './component/04.25/ErrorBoundary';
+// import { Component } from 'react';
 
-class App extends Component {
-    state = {
-        color: '#000000',
-    };
+// function getRandomColor() {
+//     return '#' + Math.floor(Math.random() * 16777215).toString(16);
+// }
 
-    handleClick = () => {
-        this.setState({
-            color: getRandomColor(),
-        });
-    };
+// class App extends Component {
+//     state = {
+//         color: '#000000',
+//     };
 
-    render() {
-        return (
-            <div>
-                <button onClick={this.handleClick}>랜덤 색상</button>
-                {/* color={this.state.color} 이게 props */}
-                <LifeCycleSample color={this.state.color}></LifeCycleSample>
-            </div>
-        );
-    }
+//     handleClick = () => {
+//         this.setState({
+//             color: getRandomColor(),
+//         });
+//     };
+
+//     render() {
+//         return (
+//             <div>
+//                 <button onClick={this.handleClick}>랜덤 색상</button>
+//                 <ErrorBoundary>
+//                     {/* color={this.state.color} 이게 props */}
+//                     <LifeCycleSample color={this.state.color}></LifeCycleSample>
+//                 </ErrorBoundary>
+//             </div>
+//         );
+//     }
+// }
+// import { useState } from 'react';
+// import InfoEffect from './component/04.25/InfoEffect';
+// function App(props) {
+//     const [visible, setVisible] = useState(false);
+//     return (
+//         <div>
+//             <button
+//                 onClick={() => {
+//                     setVisible(!visible);
+//                 }}
+//             >
+//                 {visible ? '숨기기' : '보이기'}
+//             </button>
+//             <hr />
+//             {visible && <InfoEffect />}
+//         </div>
+//     );
+// }
+// function App() {
+//     return <Counter2></Counter2>;
+// }
+import InfoReducerCustom from './component/04.25/InfoReducerCustom';
+function App() {
+    return <InfoReducerCustom />;
 }
 
 export default App;
